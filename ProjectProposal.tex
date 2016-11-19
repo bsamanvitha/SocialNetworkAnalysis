@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black, 
+    urlcolor=black,
+}
+
+\title{A Threshold-Based Girvan-Newman Implementation}
+\author{\begin{tabular}{cc}
+Samanvitha Basole & Ketki Kulkarni\\
+BS, Computer Science & MS, Computer Science\\
+\end{tabular}
+\\
+\\San Jose State University  
+}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{Introduction and Motivation}
+
+A community in large networks is a group of nodes in which the proportion of edges is greater than the betweenness of edges. The study of community detection is a standard problem in analyzing large and complex social networks. Many researchers have concentrated in solving this problem using graph partitioning, hierarchical clustering, partitional clustering and spectral clustering.
+
+\section{Problem Description}
+In this project, we plan to analyze large social networks using different hierarchical clustering algorithms. Every algorithm uses different approach to detect communities, and thus underlying structure of those communities differs. We plan to apply these algorithms and compare the resulting communities based on modularity measure, centralities, local bridges, and community structure.
+\\
+\\
+Modularity is ratio of intra-community links to the inter-community links. For accurate communities, this measure is high. Some of the algorithms we are planning to use are Girvan-Newman algorithm based on edge betweenness, Louvain Method, Label Propagation, Random Walks, and Fast Greedy approach to detect communities. We will also compare these algorithms based on their accuracy and efficiency.
+
+\section{Tools and Technologies}
+
+\begin{enumerate}
+\item Python
+\item iGraph package
+\item PyCharm/Canopy
+\end{enumerate}
+
+\section{Strategy}
+
+To achieve our goal of comparing different algorithms, we start by implementing a method in python to read datasets and generate a graph object. Then, we will apply different algorithms, already implemented in iGraph package of Python to each of the datasets mentioned below. Finally, we will visualize the result using plot() method of iGraph and evaluate the result.
+
+\section{Datasets to be used}
+
+\begin{enumerate}
+\item Youtube network
+\item Barabasi-Albert model
+\item California road network
+\end{enumerate}
+
+\section{Evaluation Method}
+
+To gauge the effectiveness of each algorithm, we will evaluate the results produced by these algorithms on the basis of community structure, Modularity, and Centralities.
+
+
+\section{References}
+
+\begin{itemize}
+\item \url{http://snap.stanford.edu/data/index.html}
+\item \url{http://netsg.cs.sfu.ca/youtubedata/}
+\item \url{https://snap.stanford.edu/data/com-Youtube.html}
+\item \url{http://snap.stanford.edu/data/roadNet-CA.html}
+\item \url{http://dm.kaist.ac.kr/jaegil/papers/bigcomp14.pdf}
+\item \url{http://www.pnas.org/content/99/12/7821.full.pdf}
+\end{itemize}
+
+\end{document}
