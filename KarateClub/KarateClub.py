@@ -4,7 +4,7 @@ import igraph
 karateGraph = igraph.read('karate.GraphML', format = 'graphml')
 
 visual_style = {}
-visual_style["vertex_size"] = 10
+visual_style["vertex_size"] = 20
 
 plot(karateGraph, "1original.png", **visual_style)
 plot(karateGraph.community_edge_betweenness().as_clustering(), "2girvanNewman.png", **visual_style)
