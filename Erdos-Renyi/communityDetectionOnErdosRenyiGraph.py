@@ -1,8 +1,22 @@
 import igraph
-
+import operator
 
 graph = igraph.Graph.Erdos_Renyi(300, 0.04)
+print "No of nodes = {}".format(graph.vcount())
+print "No of edges = {}".format(graph.ecount())
+print "Diameter = {}".format(graph.diameter(directed=False))
 #graph.vs["label"] = range(500)
+
+clusteringCoefficientsList = graph.transitivity_local_undirected(vertices=None)
+#print clusteringCoefficientsList  
+list1 = sorted(range(len(clusteringCoefficientsList)), key=lambda i: clusteringCoefficientsList[i])[-5:]
+print "Five nodes with the highest clustering coefficients are {}, {}, {}, {}, {}".format(list1[0], list1[1], list1[2], list1[3], list1[4])
+
+vertexBetweennessList = graph.betweenness(vertices=None, directed=False)
+#print vertexBetweennessList
+list2 = sorted(range(len(vertexBetweennessList)), key=lambda i: vertexBetweennessList[i])[-5:]   
+print "Five nodes with the highest vertex betweenness are {}, {}, {}, {}, {}".format(list2[0], list2[1], list2[2], list2[3], list2[4])
+
 
 visual_style = {}
 visual_style["edge_curved"] = False
