@@ -1,7 +1,7 @@
 from igraph import *
 import igraph
 
-youtubeGraph = Graph.Read_Ncol('youtube.txt')
+youtubeGraph = Graph.Read_GraphML('internet.GraphML')
 plot(youtubeGraph, "1original.png")
 plot(youtubeGraph.community_edge_betweenness().as_clustering(), "2girvanNewman.png")
 plot(youtubeGraph.community_multilevel(), "3louvainMethod.png")
